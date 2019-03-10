@@ -1,0 +1,32 @@
+%side_nav__link {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    color: transparent;
+    &:hover {
+        background-color: lighten($grey, 30%);
+    }
+}
+
+.side_nav {
+    background: $grey-medium;
+    width: 80px;
+    float: left;
+    height: 100vh;
+    position: fixed;
+    &__link {
+        @extend %side_nav__link;
+        border-bottom: solid 1px $grey-medium;
+    	&--current {
+
+    	}
+        &--tour {
+            @extend %side_nav__link;
+            @include background('icons/trip-luggage.png', 50px);
+        }
+        &--event {
+            @extend %side_nav__link;
+            @include background('icons/location-marker.png', 40px);
+        }
+    }
+}

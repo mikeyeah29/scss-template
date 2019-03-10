@@ -1,0 +1,20 @@
+.main_section {
+	width: calc(100% - 80px);
+	float: right;
+	padding: $space-md;
+}
+
+// Grid Columns
+
+@for $i from 1 through $g-col-count {
+
+	// generate column modifier clasess
+
+	$context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+	$target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+	.grid__col--#{$i} {
+		width: percentage($target / $context);
+	}
+
+}

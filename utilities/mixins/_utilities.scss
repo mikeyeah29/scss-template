@@ -1,0 +1,47 @@
+@mixin img-replace($img, $width, $height, $display: block ){
+	background-image: url('#{$path--rel}/#{$img}');
+	background-repeat: no-repeat;
+    background-position: center;
+	width: $width;
+	height: $height;
+	display: $display;
+}
+
+@mixin p-el(
+	$el,
+	$el-w: null,
+	$el-h: null){
+
+	@if $el == "before" or $el == "after" {
+		&:#{el}{
+			@extend %pseudos;
+			width: $el-w;
+			height: $el-h;
+			@content;
+		}
+	}@else {
+		@warn "`&:#{el}` is not a valid pseudo element.";
+	}
+}
+
+@mixin background($img, $size, $color: transparent, $pos: center){
+	background-image: url('#{$path--rel}/#{$img}');
+	background-size: $size;
+	background-color: $color;
+	background-repeat: no-repeat;
+    background-position: $pos;
+}
+
+// BEM
+
+@mixin e($element){
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($modifier){
+	&--#{$modifier} {
+		@content;
+	}
+}

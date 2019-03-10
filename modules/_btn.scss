@@ -1,0 +1,6 @@
+.btn {
+	@include bg-colors($ui-colors);
+	background: $color-primary;
+	padding: 5px 10px;
+	color: #fff;
+}

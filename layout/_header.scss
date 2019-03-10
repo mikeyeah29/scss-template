@@ -1,0 +1,20 @@
+header {
+	@include flex;
+	@include justify_content(flex-end);
+	@include align_items(center);
+	padding: $space-sm $space-sm $space-sm 0px;
+	box-shadow: 0px 0px 4px rgba(51, 51, 51, 0.35);
+	width: calc(100% - 80px);
+	float: right;
+	@media(min-width: $tablet){
+		padding: $space-sm $space-md $space-sm 0px;
+	}
+}
+
+.logo {
+	//@include img-replace('logo.png', 80px, 80px);
+	width: 80px;
+	height: 80px;
+    padding: 12px;
+    background: $color-primary;
+}

@@ -1,0 +1,23 @@
+// Import Google Fonts
+
+@if variable-exists(font-url--google){
+	@import url($font-url--google);
+}
+
+@function em($target, $context: $base__font-size){
+	@return ($target / $context) * 1em;
+}
+
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+%pseudos {
+	display: block;
+	content: '';
+	position: absolute;
+}
